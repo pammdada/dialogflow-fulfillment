@@ -41,7 +41,7 @@ app.post("/webhook", (req, res) => {
   let respuesta = "";
   const especialidades = detectarEspecialidad(sintomas);
 
-  if (intent === "Describir sintoma") {
+  if (intent === "describir-sintoma") {
     if (especialidades.length === 1) {
       respuesta = `Por lo que mencionas, lo más adecuado sería consultar con **${especialidades[0]}**. ¿Quieres que te agende una cita?`;
     } else {
