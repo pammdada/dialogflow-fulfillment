@@ -43,9 +43,9 @@ app.post("/webhook", (req, res) => {
 
   if (intent === "describir-sintoma") {
     if (especialidades.length === 1) {
-      respuesta = `Por lo que mencionas, lo más adecuado sería consultar con **${especialidades[0]}**. ¿Quieres que te agende una cita?`;
+      respuesta = `Por lo que mencionas, lo más adecuado sería consultar con ${especialidades[0]}fir. ¿Quieres que te agende una cita?`;
     } else {
-      respuesta = `Tus síntomas podrían estar relacionados con **${especialidades.join(" o ")}**. ¿Quieres que te recomiende por cuál empezar?`;
+      respuesta = `Tus síntomas podrían estar relacionados con ${especialidades.join(" o ")}. ¿Quieres que te recomiende por cuál empezar?`;
     }
   } else {
     respuesta = "¿Podrías contarme un poco más sobre tus síntomas?";
