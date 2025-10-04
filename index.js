@@ -45,7 +45,7 @@ app.post("/webhook", (req, res) => {
   console.log("🗣️ Texto del usuario:", sintomas);
 
   // --- Intent: describir-sintoma ---
-  if (intent === "Describir-sintoma") {
+  if (intent === "describir-sintoma") {
     const especialidades = detectarEspecialidad(sintomas);
 
     if (especialidades.length === 1) {
@@ -67,7 +67,7 @@ app.post("/webhook", (req, res) => {
   }
 
   // --- Intent: confirmar-especialidad ---
-  if (intent === "Confirmar-especialidad") {
+  if (intent === "confirmar-especialidad") {
     respuesta = "Perfecto 👍, puedo ayudarte a agendar tu cita. ¿Para qué día te gustaría?";
     return res.json({
       fulfillmentText: respuesta,
@@ -81,7 +81,7 @@ app.post("/webhook", (req, res) => {
   }
 
   // --- Intent: reservar-cita ---
-  if (intent === "Reservar-cita") {
+  if (intent === "reservar-cita") {
     respuesta = "Genial 😊. ¿Para qué día te gustaría la cita?";
     return res.json({
       fulfillmentText: respuesta,
@@ -95,7 +95,7 @@ app.post("/webhook", (req, res) => {
   }
 
   // --- Intent: elegir-fecha ---
-  if (intent === "Elegir-fecha") {
+  if (intent === "elegir-fecha") {
     respuesta = `Perfecto ✅, tu cita ha sido registrada para ${fecha}. ¡Te esperamos!`;
     return res.json({
       fulfillmentText: respuesta
@@ -103,7 +103,7 @@ app.post("/webhook", (req, res) => {
   }
 
   // --- Intent: reserva sin especialidad ---
-  if (intent === "Reservar-sin-especialidad") {
+  if (intent === "reservar-sin-especialidad") {
     respuesta = "Claro 😊, antes de agendar necesito saber qué síntomas tienes para recomendarte con qué especialista agendar.";
     return res.json({
       fulfillmentText: respuesta
